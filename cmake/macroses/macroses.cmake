@@ -55,8 +55,8 @@ macro(
 endmacro()
 
 if ( UNIX )
-	include( ${JMSF_CMAKE_SETTINGS_PATH}/macroses/linux-macroses.cmake )
+	include( ${JMSD_CMAKE_SETTINGS_PATH}/macroses/linux-macroses.cmake )
 elseif( WIN32 )
-	include( ${JMSF_CMAKE_SETTINGS_PATH}/macroses/windows-macroses.cmake )
+	include( ${JMSD_CMAKE_SETTINGS_PATH}/macroses/windows-macroses.cmake )
 endif()
 
