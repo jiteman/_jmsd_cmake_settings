@@ -9,9 +9,8 @@ macro(
 	JMSD_STRING_REMOVE_DUPLICATES
 	in_out_string
 )
-	set( intermediate_string ${${in_out_string}} )
+	string( REPLACE " " ";" intermediate_string "${${in_out_string}}" )
 
-	separate_arguments( intermediate_string )
 	list( LENGTH intermediate_string nb_elem )
 	if ( nb_elem GREATER 1 )
 		list( REMOVE_DUPLICATES intermediate_string )
