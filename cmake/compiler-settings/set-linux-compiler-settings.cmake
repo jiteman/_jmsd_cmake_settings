@@ -17,6 +17,7 @@ if ( UNIX )
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Wall" ) # enable all warnings
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Wextra" ) # enable extra warnings
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Werror" ) # treat warnings as errors
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Wpedantic" )
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "-pedantic-errors" ) #
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Wformat=2" ) #
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "-W" ) #
@@ -27,14 +28,14 @@ if ( UNIX )
 	#	common
 	# same as for C
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Wundef" )
-	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Wshadow" )
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Wshadow" ) # declaration of '' shadows a member of ''
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Wcast-qual" )
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Wcast-align" )
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Wwrite-strings" )
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Wpointer-arith" )
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Wconversion" )
-	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Wsign-compare" )
-	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Wmissing-declarations" )
+#	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Wsign-compare" ) # [-Wextra]
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Wmissing-declarations" ) # no previous declaration for ''
 #	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Waggregate-return" )
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Wredundant-decls" )
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Winline" )
