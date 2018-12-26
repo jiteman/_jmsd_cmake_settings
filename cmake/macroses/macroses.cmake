@@ -5,6 +5,7 @@ macro(
 	string( REPLACE ";" " " ${in_list_out_string} "${${in_list_out_string}}" )
 endmacro()
 
+
 macro(
 	JMSD_STRING_REMOVE_DUPLICATES
 	in_out_string
@@ -18,9 +19,9 @@ macro(
 	endif()
 endmacro()
 
+
 if ( UNIX )
 	include( ${JMSD_CMAKE_SETTINGS_PATH}/macroses/linux-macroses.cmake )
 elseif( WIN32 )
 	include( ${JMSD_CMAKE_SETTINGS_PATH}/macroses/windows-macroses.cmake )
 endif()
-

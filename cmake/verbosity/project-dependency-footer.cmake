@@ -1,5 +1,3 @@
-include( ${JMSD_CMAKE_SETTINGS_PATH}/macroses/functions.cmake )
-
 if ( JMSD_CMAKE_DEPENDENCY_OUTPUT_IS_ON )
 	message( STATUS "[JMSD] Directory dependency: ${PROJECT_NAME}_DEPENDENCY_DIRS: " )
 	JMSD_ECHO_DIRECTORY_LIST( ${PROJECT_NAME}_DEPENDENCY_DIRS )

@@ -1,5 +1,3 @@
-include( ${JMSD_CMAKE_SETTINGS_PATH}/set-verbosity-configuration.cmake )
-
 JMSD_CMAKE_CURRENT_FILE_IN( "reset-all-settings.cmake" )
 
 include( ${JMSD_CMAKE_SETTINGS_PATH}/set-cmake-settings.cmake )

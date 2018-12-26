@@ -1,5 +1,3 @@
-include( ${JMSD_CMAKE_SETTINGS_PATH}/set-verbosity-configuration.cmake )
-
 JMSD_CMAKE_CURRENT_FILE_IN( "set-target-directories.cmake" )
 
 set( JMSD_DESTINATION_BINARIES_DIR __binaries )

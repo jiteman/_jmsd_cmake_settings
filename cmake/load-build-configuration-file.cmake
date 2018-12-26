@@ -1,5 +1,3 @@
-include( ${JMSD_CMAKE_SETTINGS_PATH}/set-verbosity-configuration.cmake )
-
 JMSD_CMAKE_CURRENT_FILE_IN( "load-build-configuration-file.cmake" )
 
 if ( NOT DEFINED JMSD_BUILD_CONFIGURATION_FILE_WAS_INCLUDED )
