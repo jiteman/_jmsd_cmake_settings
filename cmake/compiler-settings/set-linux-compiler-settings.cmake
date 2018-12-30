@@ -37,7 +37,6 @@ if ( UNIX )
 #	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Wsign-compare" ) # [-Wextra]
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Wmissing-declarations" ) # no previous declaration for ''
 #	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Waggregate-return" )
-	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Wredundant-decls" )
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Winline" )
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "--param inline-unit-growth=30" )
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "-Wredundant-decls" )
