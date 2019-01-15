@@ -3,6 +3,7 @@ macro(
 	in_list_out_string
 )
 	string( REPLACE ";" " " ${in_list_out_string} "${${in_list_out_string}}" )
+
 endmacro()
 
 
@@ -17,6 +18,7 @@ macro(
 		list( REMOVE_DUPLICATES intermediate_string )
 		string( REPLACE ";" " " ${in_out_string} "${intermediate_string}" )
 	endif()
+
 endmacro()
 
 
