@@ -26,7 +26,9 @@ function(
 	set( found_file_indicies "" )
 	set( filename_index 0 )
 
-	foreach( file_path ${${out_in_file_list}} )
+	set( out_list ${${out_in_file_list}} )
+
+	foreach( file_path ${out_list} )
 		string( FIND ${file_path} ${file_name_to_remove} found_index )
 
 		if( NOT found_index EQUAL -1 )
@@ -42,8 +44,6 @@ function(
 		if( ${index_quantity} GREATER 1 )
 			list( REVERSE found_file_indicies )
 		endif()
-
-		set( out_list ${${out_in_file_list}} )
 
 		foreach( file_index ${found_file_indicies} )
 			list( REMOVE_AT out_list ${file_index} )
