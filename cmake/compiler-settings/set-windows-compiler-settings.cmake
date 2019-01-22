@@ -51,7 +51,7 @@ if ( WIN32 )
 	# special warning settings (google [test] sucks)
 	#	common
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4061" ) # enumerator in switch of enum is not explicitly handled by a case label
-	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4365" ) # signed/unsigned mismatch
+	#	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4365" ) # signed/unsigned mismatch
 	#	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4668" ) # is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
 	#	debug
 	#	release
@@ -114,7 +114,7 @@ if ( WIN32 )
 
 	# additional stuff
 	#	common
-	list( APPEND JMSD_CMAKE_CXX_FLAGS "/MP" ) # multi-processor compilation
+#	list( APPEND JMSD_CMAKE_CXX_FLAGS "/MP" ) # multi-processor compilation
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zi" ) # debug information output: program database
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Gm-" ) # disable minimal rebuild
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/errorReport:none" ) # no internal compiler error reporting
