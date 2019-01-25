@@ -44,6 +44,7 @@ if ( WIN32 )
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd5027" ) # move assignment operator was implicitly defined as deleted
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd5038" ) # data member '' will be initialized after data member ''
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd5039" ) # '': pointer or reference to potentially throwing function passed to extern C function under -EHc. Undefined behavior may occur if this function throws an exception.
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd5045" ) # Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
 	#	debug
 	#	release
 	list( APPEND JMSD_CMAKE_CXX_FLAGS_RELEASE "/wd4711" ) # function selected for automatic inline expansion
