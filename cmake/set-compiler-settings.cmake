@@ -2,14 +2,14 @@ JMSD_CMAKE_CURRENT_FILE_IN( "set-compiler-settings.cmake" )
 
 if ( UNIX )
 	if ( JMSD_CMAKE_VERBOSE_OUTPUT_IS_ON )
-		message( STATUS "[JMSD] COMPILER SETTINGS: Linux linker settings are selected" )
+		message( STATUS "[JMSD] COMPILER SETTINGS: Linux" )
 	endif()
 	
 	include( ${JMSD_CMAKE_SETTINGS_PATH}/compiler-settings/set-linux-compiler-settings.cmake )
 
 elseif( WIN32 )
 	if ( JMSD_CMAKE_VERBOSE_OUTPUT_IS_ON )
-		message( STATUS "[JMSD] COMPILER SETTINGS: Windows linker settings are selected" )
+		message( STATUS "[JMSD] COMPILER SETTINGS: Windows" )
 	endif()
 	
 	include( ${JMSD_CMAKE_SETTINGS_PATH}/compiler-settings/set-windows-compiler-settings.cmake )

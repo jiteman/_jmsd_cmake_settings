@@ -14,8 +14,4 @@ set( CMAKE_DEBUG_POSTFIX "" )
 set( CMAKE_SHARED_LIBRARY_PREFIX "" )
 # set( CMAKE_STATIC_LIBRARY_PREFIX "" )
 
-if ( "${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}" )
-	message( SEND_ERROR "[JMSD] In-source build is not allowed." )
-endif()
-
 JMSD_CMAKE_CURRENT_FILE_OUT( "set-cmake-settings.cmake" )

@@ -83,7 +83,11 @@ else()
 endif()
 
 # set cached CMAKE_BUILD_TYPE to lowercased build name [debug|release]
-message( STATUS "[JMSD] BUILD-CONFIGURATION: Caching ${JMSD_CURRENT_CONFIGURATION} build configuration: CMAKE_BUILD_TYPE to ${JMSD_CURRENT_CONFIGURATION}" )
+if ( JMSD_CMAKE_VERBOSE_OUTPUT_IS_ON )
+	if ( JMSD_CMAKE_BUILD_OUTPUT_IS_ON )
+		message( STATUS "[JMSD] BUILD-CONFIGURATION: Caching ${JMSD_CURRENT_CONFIGURATION} build configuration: CMAKE_BUILD_TYPE to ${JMSD_CURRENT_CONFIGURATION}" )
+	endif()
+endif()
 set( CMAKE_BUILD_TYPE ${JMSD_CURRENT_CONFIGURATION} CACHE STRING "[JMSD] Selecting ${JMSD_CURRENT_CONFIGURATION} build configuration" FORCE )
 
 JMSD_CMAKE_CURRENT_FILE_OUT( "select-build-configuration.cmake" )

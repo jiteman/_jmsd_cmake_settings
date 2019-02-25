@@ -2,7 +2,7 @@ include( ${JMSD_CMAKE_SETTINGS_PATH}/set-verbosity-configuration.cmake )
 
 JMSD_CMAKE_CURRENT_FILE_IN( "set-all-settings.cmake" )
 
-include( ${JMSD_CMAKE_SETTINGS_PATH}/macroses/functions-and-macroses.cmake )
+include( ${JMSD_CMAKE_SETTINGS_PATH}/utilities/functions-and-macroses.cmake )
 
 include( ${JMSD_CMAKE_SETTINGS_PATH}/disable-in-source-build.cmake )
 

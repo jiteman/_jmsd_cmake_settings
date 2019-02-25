@@ -23,7 +23,7 @@ endmacro()
 
 
 if ( UNIX )
-	include( ${JMSD_CMAKE_SETTINGS_PATH}/macroses/linux-macroses.cmake )
+	include( ${JMSD_CMAKE_SETTINGS_PATH}/utilities/linux-macroses.cmake )
 elseif( WIN32 )
-	include( ${JMSD_CMAKE_SETTINGS_PATH}/macroses/windows-macroses.cmake )
+	include( ${JMSD_CMAKE_SETTINGS_PATH}/utilities/windows-macroses.cmake )
 endif()

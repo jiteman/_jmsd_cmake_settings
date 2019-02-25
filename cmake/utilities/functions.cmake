@@ -1,8 +1,42 @@
 function(
+	JMSD_SHOW_PROJECT_HEADER_FUNCTION
+	)
+
+endfunction()
+
+function(
 	JMSD_SHOW_MESSAGE
 	message_text
 )
+	message( STATUS "[JMSD] ${message_text}" )
+endfunction()
+
+
+function(
+	JMSD_SHOW_VERBOSE_MESSAGE
+	message_text
+)
 	if ( JMSD_CMAKE_VERBOSE_OUTPUT_IS_ON )
+		message( STATUS "[JMSD] ${message_text}" )
+	endif()
+endfunction()
+
+
+function(
+	JMSD_SHOW_DEPENDENCY_MESSAGE
+	message_text
+)
+	if ( JMSD_CMAKE_DEPENDENCY_OUTPUT_IS_ON )
+		message( STATUS "[JMSD] ${message_text}" )
+	endif()
+endfunction()
+
+
+function(
+	JMSD_SHOW_PROJECT_NAME_MESSAGE
+	message_text
+)
+	if ( JMSD_CMAKE_PROJECT_NAME_OUTPUT_IS_ON )
 		message( STATUS "[JMSD] ${message_text}" )
 	endif()
 endfunction()
@@ -15,6 +49,19 @@ function(
 	foreach( directory ${${directory_list}} )
 		message( STATUS "  " ${directory} )
 	endforeach()
+endfunction()
+
+
+function(
+	JMSD_ECHO_DIRECTORY_LIST_IF
+	is_on
+	directory_list
+)
+	if ( ${is_on} )
+		foreach( directory ${${directory_list}} )
+			message( STATUS "  " ${directory} )
+		endforeach()
+	endif()
 endfunction()
 
 
