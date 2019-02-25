@@ -1,17 +1,11 @@
 JMSD_CMAKE_CURRENT_FILE_IN( "set-linker-settings.cmake" )
 
 if ( UNIX )
-	if (JMSD_CMAKE_VERBOSE_OUTPUT_IS_ON )
-		message( STATUS "[JMSD] LINKER SETTINGS: Linux" )
-	endif()
-	
+	JMSD_SHOW_BUILD_MESSAGE( "[JMSD] LINKER SETTINGS: Linux" )
 	include( ${JMSD_CMAKE_SETTINGS_PATH}/linker-settings/set-linux-linker-settings.cmake )
 
 elseif( WIN32 )
-	if ( JMSD_CMAKE_VERBOSE_OUTPUT_IS_ON )
-		message( STATUS "[JMSD] LINKER SETTINGS: Windows")
-	endif()
-	
+	JMSD_SHOW_BUILD_MESSAGE( "[JMSD] LINKER SETTINGS: Windows")
 	include( ${JMSD_CMAKE_SETTINGS_PATH}/linker-settings/set-windows-linker-settings.cmake )
 
 else()
