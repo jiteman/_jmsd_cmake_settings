@@ -92,7 +92,7 @@ if ( WIN32 )
 
 	# language settings
 	#	common
-	list( APPEND JMSD_CMAKE_CXX_FLAGS "/std:c++latest" ) # treat wchar_t as built in type
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/std:c++latest" ) # All C++20 features require /std:c++latest; when the implementation is complete, a new /std:c++20 option will be enabled.
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:wchar_t" ) # treat wchar_t as built in type
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:rvalueCast" ) # enforce type conversion rules
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:forScope" ) # force conformance in for loop scope: (yes)
