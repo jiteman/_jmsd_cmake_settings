@@ -10,11 +10,15 @@ if ( WIN32 )
 	set( JMSD_CMAKE_CXX_FLAGS_DEBUG "" )
 	set( JMSD_CMAKE_CXX_FLAGS_RELEASE "" )
 
+#	set( JMSD_CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} )
+#	set( JMSD_CMAKE_CXX_FLAGS_DEBUG ${CMAKE_CXX_FLAGS_DEBUG} )
+#	set( JMSD_CMAKE_CXX_FLAGS_RELEASE ${CMAKE_CXX_FLAGS_RELEASE} )
+
 	# warning settings
 	#	common
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Wall" ) # enable all warnings
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/WX" ) # treat warnings as errors
-	list( APPEND JMSD_CMAKE_CXX_FLAGS "/bigobj" ) # treat warnings as errors
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/bigobj" ) # generate extended object format
 	#	debug
 	#	release
 
@@ -93,14 +97,28 @@ if ( WIN32 )
 	# language settings
 	#	common
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/std:c++latest" ) # All C++20 features require /std:c++latest; when the implementation is complete, a new /std:c++20 option will be enabled.
-	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:wchar_t" ) # treat wchar_t as built in type
-	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:rvalueCast" ) # enforce type conversion rules
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/permissive" ) # enable some nonconforming code to compile (feature set subject to change) (on by default)
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:forScope" ) # force conformance in for loop scope: (yes)
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:wchar_t" ) # treat wchar_t as built in type
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:auto" ) # enforce the new Standard C++ meaning for auto
-	##	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:trigraphs" ) # enable trigraphs (off by default)
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:trigraphs-" ) # enable trigraphs (off by default)
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:rvalueCast" ) # enforce type conversion rules
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:strictStrings" ) # disable string-literal to [char|wchar_t]* conversion (off by default)
-	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:inline" ) # remove unreferenced function or data if it is COMDAT or has internal linkage only (off by default)
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:implicitNoexcept" ) # enable implicit noexcept on required functions
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:threadSafeInit" ) # enable thread-safe local static initialization
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:inline" ) # remove unreferenced function or data if it is COMDAT or has internal linkage only (off by default)
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:sizedDealloc" ) # enable C++14 global sized deallocation functions (on by default)
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:throwingNew" ) # assume operator new throws on failure (off by default)
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:referenceBinding" ) # a temporary will not bind to an non-const lvalue reference (off by default)
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:twoPhase-" ) # disable two-phase name lookup
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:ternary" ) # enforce C++11 rules for conditional operator (off by default)
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:noexceptTypes" ) # enforce C++17 noexcept rules (on by default in C++17 or later)
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:alignedNew" ) # enable C++17 alignment of dynamically allocated objects (on by default)
+
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:externConstexpr" ) # allows external linkage for constexpr variables
+
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/volatile:iso" ) # Acquire/release semantics not guaranteed on volatile accesses
+
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/GR" ) # enable run-time type information: (yes)
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/EHsc" ) # enable C++ exceptions: [ EHsc | EHa ] // yes, yes with SEH
 	#	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Gd" ) # calling conventions: __cdecl [ Gd | Gr | Gz | Gv ] // __cdecl, __fastcall, __stdcall, __vectorcall
@@ -110,12 +128,13 @@ if ( WIN32 )
 
 	# security settings
 	#	common
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Qspectre-" ) # enable mitigations for CVE 2017-5753 (disabled)
 	#	debug
 	#	release
 
 	# additional stuff
 	#	common
-#	list( APPEND JMSD_CMAKE_CXX_FLAGS "/MP" ) # multi-processor compilation
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/MP" ) # multi-processor compilation
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zi" ) # debug information output: program database
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Gm-" ) # disable minimal rebuild
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/errorReport:none" ) # no internal compiler error reporting
