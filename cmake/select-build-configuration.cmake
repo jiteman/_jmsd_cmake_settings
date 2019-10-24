@@ -26,7 +26,7 @@ endif()
 # detect configuration from configuration file, or standard
 if ( ${JMSD_CURRENT_CONFIGURATION} STREQUAL "is_not_specified" )
 	if ( EXISTS "${CMAKE_SOURCE_DIR}/CMake-build-configuration.cmake" ) # JMSF way to deal with configurations
-		message( STATUS "[JMSD] BUILD-CONFIGURATION: Using configuration file: ${CMAKE_SOURCE_DIR}/CMake-configuration.cmake" )
+		message( STATUS "[JMSD] BUILD-CONFIGURATION: Using configuration file: ${CMAKE_SOURCE_DIR}/CMake-build-configuration.cmake" )
 		include( ${CMAKE_SOURCE_DIR}/CMake-build-configuration.cmake )
 
 		if ( ${JMSD_ROOT_BUILD_CONFIGURATION} STREQUAL "set_to_debug" )
