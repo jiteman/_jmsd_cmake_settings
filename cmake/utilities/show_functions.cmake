@@ -56,6 +56,17 @@ function(
 	endif()
 endfunction()
 
+function(
+	JMSD_SHOW_TEST_SOURCE_DIRS
+	)
+	if ( JMSD_CMAKE_VERBOSE_OUTPUT_IS_ON )
+		if ( JMSD_CMAKE_DEPENDENCY_OUTPUT_IS_ON )
+			message( STATUS "[JMSD] Directory dependency: ${PROJECT_NAME}_TEST_SOURCE_DIRS: " )
+			JMSD_ECHO_DIRECTORY_LIST( ${PROJECT_NAME}_TEST_SOURCE_DIRS )
+		endif()
+	endif()
+endfunction()
+
 
 function(
 	JMSD_SHOW_MESSAGE
