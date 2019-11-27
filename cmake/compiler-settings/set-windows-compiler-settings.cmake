@@ -63,6 +63,7 @@ if ( WIN32 )
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4710" ) # function not inlined
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4774" ) # 'sprintf_s' : format string expected in argument 3 is not a string literal
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4820" ) # bytes padding added after data member
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4866" ) # compiler may not enforce left-to-right evaluation order for call to ''
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd5026" ) # move constructor was implicitly defined as deleted
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd5027" ) # move assignment operator was implicitly defined as deleted
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd5038" ) # data member '' will be initialized after data member ''
