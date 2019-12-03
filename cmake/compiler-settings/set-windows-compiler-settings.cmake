@@ -117,6 +117,7 @@ if ( WIN32 )
 	# language settings
 	#	common
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/std:c++latest" ) # All C++20 features require /std:c++latest; when the implementation is complete, a new /std:c++20 option will be enabled.
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:__cplusplus" ) # All C++20 features require /std:c++latest; when the implementation is complete, a new /std:c++20 option will be enabled.
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/permissive" ) # enable some nonconforming code to compile (feature set subject to change) (on by default)
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:forScope" ) # force conformance in for loop scope: (yes)
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/Zc:wchar_t" ) # treat wchar_t as built in type
