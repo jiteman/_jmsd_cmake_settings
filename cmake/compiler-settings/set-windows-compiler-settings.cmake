@@ -46,6 +46,7 @@ if ( WIN32 )
 	#	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4251" ) # class needs to have dll-interface to be used by clients of class
 	#	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4275" ) # non dll-interface class '' used as base for dll-interface class ''
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/D _CRT_SECURE_NO_WARNINGS" ) # this function or variable may be unsafe
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4061" ) # enumerator '' in switch of enum '' is not explicitly handled by a case label
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4250" ) # inherits via dominance
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4251" ) # class needs to have dll-interface to be used by clients of class
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4371" ) # '': layout of class may have changed from a previous version of the compiler due to better packing of member ''
@@ -64,6 +65,7 @@ if ( WIN32 )
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4774" ) # 'sprintf_s' : format string expected in argument 3 is not a string literal
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4820" ) # bytes padding added after data member
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4866" ) # compiler may not enforce left-to-right evaluation order for call to ''
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4868" ) # compiler may not enforce left-to-right evaluation order in braced initializer list
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd5026" ) # move constructor was implicitly defined as deleted
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd5027" ) # move assignment operator was implicitly defined as deleted
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd5038" ) # data member '' will be initialized after data member ''
@@ -72,14 +74,6 @@ if ( WIN32 )
 	#	debug
 	#	release
 	list( APPEND JMSD_CMAKE_CXX_FLAGS_RELEASE "/wd4711" ) # function selected for automatic inline expansion
-
-	# special warning settings (google [test] sucks)
-	#	common
-	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4061" ) # enumerator in switch of enum is not explicitly handled by a case label
-	#	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4365" ) # signed/unsigned mismatch
-	#	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4668" ) # is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
-	#	debug
-	#	release
 
 	# optimization settings
 	#	common
