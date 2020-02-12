@@ -24,6 +24,7 @@ if ( WIN32 )
 	#	common
 	#	list( APPEND JMSD_CMAKE_C_FLAGS "/wd4251" ) # class needs to have dll-interface to be used by clients of class
 	#	list( APPEND JMSD_CMAKE_C_FLAGS "/wd4275" ) # non dll-interface class '' used as base for dll-interface class ''
+	list( APPEND JMSD_CMAKE_C_FLAGS "/D _CRT_HAS_CXX17=0" )
 	list( APPEND JMSD_CMAKE_C_FLAGS "/D _CRT_SECURE_NO_WARNINGS" ) # this function or variable may be unsafe
 	list( APPEND JMSD_CMAKE_C_FLAGS "/wd4061" ) # enumerator '' in switch of enum '' is not explicitly handled by a case label
 	list( APPEND JMSD_CMAKE_C_FLAGS "/wd4250" ) # inherits via dominance
@@ -36,6 +37,7 @@ if ( WIN32 )
 	list( APPEND JMSD_CMAKE_C_FLAGS "/wd4514" ) # unreferenced inline function has been removed
 	list( APPEND JMSD_CMAKE_C_FLAGS "/wd4548" ) # expression before comma has no effect; expected expression with side-effect // malloc.h
 	list( APPEND JMSD_CMAKE_C_FLAGS "/wd4571" ) # catch( ... ) semantics changed since Visual C++ 7.1; structured exceptions (SEH) are no longer caught
+	list( APPEND JMSD_CMAKE_C_FLAGS "/wd4574" ) # '' is defined to be '0': did you mean to use '#if '?
 	list( APPEND JMSD_CMAKE_C_FLAGS "/wd4589" ) # Constructor of abstract class ignores initializer for virtual base class
 	list( APPEND JMSD_CMAKE_C_FLAGS "/wd4623" ) # '': default constructor was implicitly defined as deleted
 	list( APPEND JMSD_CMAKE_C_FLAGS "/wd4625" ) # copy constructor was implicitly defined as deleted
