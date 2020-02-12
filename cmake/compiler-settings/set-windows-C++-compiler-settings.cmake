@@ -3,27 +3,6 @@ include( ${JMSD_CMAKE_SETTINGS_PATH}/set-verbosity-configuration.cmake )
 JMSD_CMAKE_CURRENT_FILE_IN( "set-windows-compiler-settings.cmake" )
 
 if ( WIN32 )
-	# C language
-	#	message( STATUS "[JMSD] CMAKE_C_FLAGS: ${CMAKE_C_FLAGS}" )
-	#	message( STATUS "[JMSD] CMAKE_C_FLAGS_DEBUG: ${CMAKE_C_FLAGS_DEBUG}" )
-	#	message( STATUS "[JMSD] CMAKE_C_FLAGS_RELEASE: ${CMAKE_C_FLAGS_RELEASE}" )
-
-	#	set( JMSD_CMAKE_C_FLAGS "" )
-	#	set( JMSD_CMAKE_C_FLAGS_DEBUG "" )
-	#	set( JMSD_CMAKE_C_FLAGS_RELEASE "" )
-
-	#	string( REPLACE ";" " " JMSD_CMAKE_C_FLAGS_STR "${JMSD_CMAKE_C_FLAGS}" )
-	#	string( REPLACE ";" " " JMSD_CMAKE_C_FLAGS_DEBUG_STR "${JMSD_CMAKE_C_FLAGS_DEBUG}" )
-	#	string( REPLACE ";" " " JMSD_CMAKE_C_FLAGS_RELEASE_STR "${JMSD_CMAKE_C_FLAGS_RELEASE}" )
-
-	#	set( CMAKE_C_FLAGS "" )
-	#	set( CMAKE_C_FLAGS_DEBUG "" )
-	#	set( CMAKE_C_FLAGS_RELEASE "" )
-
-	#	set( CMAKE_C_FLAGS ${JMSD_CMAKE_C_FLAGS_STR} )
-	#	set( CMAKE_C_FLAGS_DEBUG ${JMSD_CMAKE_C_FLAGS_DEBUG_STR} )
-	#	set( CMAKE_C_FLAGS_RELEASE ${JMSD_CMAKE_C_FLAGS_RELEASE_STR} )
-
 	# C++ language
 	set( JMSD_CMAKE_CXX_FLAGS "" )
 	set( JMSD_CMAKE_CXX_FLAGS_DEBUG "" )
@@ -84,7 +63,8 @@ if ( WIN32 )
 	#	release
 	list( APPEND JMSD_CMAKE_CXX_FLAGS_RELEASE "/Gy" ) # Enable function level linking: (yes)
 	list( APPEND JMSD_CMAKE_CXX_FLAGS_RELEASE "/Ox" ) # Optimization: full optimization
-	list( APPEND JMSD_CMAKE_CXX_FLAGS_RELEASE "/Ob2" ) # Inline functions expansion: any suitable
+#	list( APPEND JMSD_CMAKE_C_FLAGS_RELEASE "/Ob2" ) # Inline functions expansion: any suitable
+	list( APPEND JMSD_CMAKE_C_FLAGS_RELEASE "/Ob3" ) # Inline functions expansion: any suitable
 	list( APPEND JMSD_CMAKE_CXX_FLAGS_RELEASE "/GT" ) # Enable fiber-safe optimiztions: (yes)
 	list( APPEND JMSD_CMAKE_CXX_FLAGS_RELEASE "/Oy" ) # Omit frame pointers: (yes)
 	list( APPEND JMSD_CMAKE_CXX_FLAGS_RELEASE "/Oi" ) # Enable intrinsic functions: (yes)
