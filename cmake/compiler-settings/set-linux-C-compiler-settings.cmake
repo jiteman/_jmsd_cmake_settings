@@ -54,7 +54,6 @@ if ( UNIX )
 	#	list( APPEND JMSD_CMAKE_C_FLAGS "-Wno-format-security" )
 	#	list( APPEND JMSD_CMAKE_C_FLAGS "-Wdisabled-optimization" )
 	#	list( APPEND JMSD_CMAKE_C_FLAGS "-Wpacked" )
-	list( APPEND JMSD_CMAKE_C_FLAGS "-Wno-reorder" )
 	#	list( APPEND JMSD_CMAKE_C_FLAGS "-Wno-parentheses" )
 	#	list( APPEND JMSD_CMAKE_C_FLAGS "-Wpadded" )
 	list( APPEND JMSD_CMAKE_C_FLAGS "--param large-stack-frame-growth=5000" )
@@ -90,8 +89,7 @@ if ( UNIX )
 
 	# language settings
 	#	common
-	list( APPEND JMSD_CMAKE_C_FLAGS "-std=c++17" )
-	list( APPEND JMSD_CMAKE_C_FLAGS "-fconcepts" ) # C++ Concepts are now supported
+	list( APPEND JMSD_CMAKE_C_FLAGS "-std=c17" )
 	#	debug
 	#	release
 
