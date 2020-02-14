@@ -24,7 +24,8 @@ if ( WIN32 )
 	#	common
 	#	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4251" ) # class needs to have dll-interface to be used by clients of class
 	#	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4275" ) # non dll-interface class '' used as base for dll-interface class ''
-	list( APPEND JMSD_CMAKE_CXX_FLAGS "/D _CRT_SECURE_NO_WARNINGS" ) # this function or variable may be unsafe
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/D_CRT_SECURE_NO_WARNINGS" ) # this function or variable may be unsafe
+	list( APPEND JMSD_CMAKE_CXX_FLAGS "/D_CRT_NONSTDC_NO_DEPRECATE" ) # The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name.
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4061" ) # enumerator '' in switch of enum '' is not explicitly handled by a case label
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4250" ) # inherits via dominance
 	list( APPEND JMSD_CMAKE_CXX_FLAGS "/wd4251" ) # class needs to have dll-interface to be used by clients of class
