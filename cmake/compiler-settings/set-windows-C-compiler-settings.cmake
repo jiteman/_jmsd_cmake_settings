@@ -64,7 +64,7 @@ if ( WIN32 )
 	#	debug
 	list( APPEND JMSD_CMAKE_C_FLAGS_DEBUG "/Od" ) # disable optimization
 	list( APPEND JMSD_CMAKE_C_FLAGS_DEBUG "/Oy-" ) # do not omit frame pointers
-	list( APPEND JMSD_CMAKE_C_FLAGS_RELEASE "/Ob0" ) # Inline functions expansion: disable
+	list( APPEND JMSD_CMAKE_C_FLAGS_DEBUG "/Ob0" ) # Inline functions expansion: disable
 	#	release
 	list( APPEND JMSD_CMAKE_C_FLAGS_RELEASE "/Gy" ) # Enable function level linking: (yes)
 	list( APPEND JMSD_CMAKE_C_FLAGS_RELEASE "/Ox" ) # Optimization: full optimization
